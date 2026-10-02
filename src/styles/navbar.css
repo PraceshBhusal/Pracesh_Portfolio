@@ -1,0 +1,174 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: var(--nav-height);
+  border-bottom: 1px solid transparent;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(18px);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.navbar-scrolled {
+  border-bottom-color: var(--border);
+  background: rgba(10, 10, 10, 0.9);
+}
+
+.navbar-container {
+  width: min(100% - 48px, var(--container));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logo-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  background: var(--accent);
+  color: #080808;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.logo-text strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+
+.logo-text small {
+  color: var(--text-muted);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar-links > a {
+  position: relative;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-links > a:not(.navbar-github)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+.navbar-links > a:hover {
+  color: var(--text);
+}
+
+.navbar-links > a:not(.navbar-github):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  color: var(--text) !important;
+}
+
+.navbar-github:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.navbar-menu-button {
+  display: none;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .navbar-container {
+    width: min(100% - 32px, var(--container));
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+
+  .navbar-links > a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar-menu-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: var(--nav-height);
+    right: 16px;
+    left: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    background: rgba(15, 15, 15, 0.98);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  }
+
+  .navbar-links-open {
+    display: flex;
+  }
+
+  .navbar-links > a {
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+
+  .navbar-github {
+    margin-top: 6px;
+    justify-content: center;
+  }
+}

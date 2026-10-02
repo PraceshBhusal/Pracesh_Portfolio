@@ -1,0 +1,150 @@
+.expertise-section {
+  padding: 130px 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Center ONLY the introduction */
+.expertise-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.expertise-heading .section-eyebrow {
+  text-align: center;
+}
+
+.expertise-heading .section-heading {
+  margin: 20px auto 25px;
+  text-align: center;
+}
+
+.expertise-intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.85;
+  text-align: center;
+}
+
+/* Expertise cards remain normal */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.expertise-card {
+  position: relative;
+  min-height: 290px;
+  padding: 30px 32px 35px;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.expertise-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 0;
+  background: var(--accent);
+  transition: height 0.35s ease;
+}
+
+.expertise-card:hover {
+  background: var(--bg-primary);
+}
+
+.expertise-card:hover::before {
+  height: 100%;
+}
+
+.expertise-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-muted);
+}
+
+.expertise-card-top svg {
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.expertise-card:hover .expertise-card-top svg {
+  color: var(--accent);
+  transform: translate(3px, -3px);
+}
+
+.expertise-number {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.expertise-card-content {
+  margin-top: 85px;
+}
+
+.expertise-card-content h3 {
+  margin: 0 0 15px;
+  font-family: var(--font-display);
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.expertise-card-content p {
+  max-width: 510px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+  .expertise-section {
+    padding: 95px 0;
+  }
+
+  .expertise-heading {
+    margin-bottom: 45px;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-card {
+    min-height: 240px;
+  }
+
+  .expertise-card-content {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .expertise-card {
+    padding: 25px;
+  }
+
+  .expertise-card-content h3 {
+    font-size: 22px;
+  }
+}

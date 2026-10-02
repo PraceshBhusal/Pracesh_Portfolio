@@ -1,0 +1,152 @@
+.education-section {
+  background: #0d0d0d;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 16px;
+}
+
+.education-main-card,
+.certifications-card {
+  padding: 36px;
+  border: 1px solid var(--border);
+  background: #101010;
+}
+
+.education-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.education-period {
+  display: block;
+  margin-top: 45px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.education-main-card h3 {
+  margin-top: 12px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 27px;
+  letter-spacing: -0.035em;
+}
+
+.education-main-card p {
+  margin-top: 8px;
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+.education-institution {
+  color: var(--text) !important;
+  font-weight: 600;
+}
+
+.education-achievement {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  color: var(--accent);
+  font-size: 11px;
+}
+
+.certifications-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+}
+
+.certification-list {
+  margin-top: 20px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+}
+
+.certification-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.certification-item strong {
+  font-size: 13px;
+}
+
+.certification-item span {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.certification-item small {
+  color: var(--text-muted);
+  font-size: 9px;
+  text-align: right;
+}
+
+.languages-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 22px 28px;
+  border: 1px solid var(--border);
+}
+
+.languages-label {
+  margin-right: 10px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.language-item {
+  display: flex;
+  gap: 7px;
+  padding-right: 15px;
+  border-right: 1px solid var(--border);
+  font-size: 11px;
+}
+
+.language-item:last-child {
+  border-right: 0;
+}
+
+.language-item span {
+  color: var(--text-muted);
+}
+
+@media (max-width: 800px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .certification-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .certification-item small {
+    text-align: left;
+  }
+}
