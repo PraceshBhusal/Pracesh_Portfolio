@@ -74,7 +74,7 @@ const Hero = () => {
 
           <div className="hero-floating-card hero-card-one">
             <strong>IT</strong>
-<span>Infrastructure & Operations</span>
+<span>Operations</span>
           </div>
 
           <div className="hero-floating-card hero-card-two">
